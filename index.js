@@ -28,8 +28,8 @@ app.get("/", async (req, res) => {
       user: result.username,
     });
   } catch(error){
-    console.log(error.response.data);
-    res.status(500);
+    console.log("Error:", error.message);
+    res.status(500).send("Error fetching data: " + error.message);
   }
 });
 // 5. Use axios to get a random secret and pass it to index.ejs to display the
